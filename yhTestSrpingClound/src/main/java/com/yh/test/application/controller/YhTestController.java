@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.List;
 
 import com.yh.test.application.service.Eureka2ServiceClient;
-import com.yh.test.application.service.EurekaFile2ServiceClient;
 import feign.Feign;
 import feign.form.FormEncoder;
 import feign.form.spring.SpringFormEncoder;
@@ -44,9 +43,6 @@ public class YhTestController {
     private EurekaServiceClient eurekaServiceClient;
     @Autowired
     private Eureka2ServiceClient eureka2ServiceClient;
-
-    @Autowired
-    private EurekaFile2ServiceClient eurekaFile2ServiceClient;
     @Autowired
     private EurekaFileServiceClient eurekaFileServiceClient;
 
@@ -123,7 +119,7 @@ public class YhTestController {
     @RequestMapping(value = "/saveFile2")
     @ResponseBody
     public String saveFile2() throws IOException {
-        File f = eurekaFile2ServiceClient.saveFile2(new File("d://1.txt"));
+        File f = eurekaServiceClient.saveFile2(new File("d://1.txt"));
         System.out.println("result:"+f.getName());
         System.out.println("result:"+f.getAbsolutePath());
         return "Hello World! :" +f.getName();

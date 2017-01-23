@@ -19,7 +19,6 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private EurekaServiceClient eurekaServiceClient;
 
-    @Override
     @HystrixCommand(fallbackMethod = "findFail")
     public ProductVO find() {
         if(1 ==1){
