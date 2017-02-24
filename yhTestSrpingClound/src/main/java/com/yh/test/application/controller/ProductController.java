@@ -3,6 +3,7 @@ package com.yh.test.application.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -23,7 +24,8 @@ public class ProductController {
     private ProductService productService;
 
     @RequestMapping(value = "/list")
-    public String list() {
+    public String list( Model model) {
+        model.addAttribute("name","yh");
         return "/product/list";
     }
 
