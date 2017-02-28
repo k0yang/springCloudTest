@@ -48,6 +48,9 @@ public class FreemarkerConfig {
         configurer.setTemplateLoaderPath(templateLoaderPath);
         configurer.setFreemarkerSettings(p);
         configurer.setFreemarkerVariables(variables);
+        XmlEscape xe = new XmlEscape();
+        variables.put("xmlescape",xe);
+
         return configurer;
     }
 
@@ -59,12 +62,6 @@ public class FreemarkerConfig {
         fmvr.setSuffix(".ftl");
         fmvr.setContentType("text/html; charset=utf-8");
         return fmvr;
-    }
-
-    @Bean
-    public XmlEscape productXmlEscape(){
-        XmlEscape xe = new XmlEscape();
-        return xe;
     }
 
     public Map<String, String> getSettings() {

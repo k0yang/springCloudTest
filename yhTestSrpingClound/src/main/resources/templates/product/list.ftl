@@ -18,5 +18,7 @@ ${version}
     test
 [/#if]
 
+${xmlescape}
+
 </body>
 </html>
