@@ -18,7 +18,16 @@ ${version}
     test
 [/#if]
 
-${xmlescape}
+<hr/>
+
+myAreaName: ${myAreaName}
+[@areaName areaId=1]
+        myAreaName: ${myAreaName}
+[/@areaName]
+
+<hr/>
+
+areaNameMethod: ${areaNameMethod("yang","hui","test")}
 
 </body>
 </html>

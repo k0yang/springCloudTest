@@ -1,6 +1,8 @@
 package com.yh.test.application.freemarker.configuration;
 
 import ch.qos.logback.classic.gaffer.PropertyUtil;
+import com.yh.test.application.freemarker.directive.AreaNameDirective;
+import com.yh.test.application.freemarker.method.AreaNameMethod;
 import freemarker.template.utility.XmlEscape;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -49,8 +51,11 @@ public class FreemarkerConfig {
         configurer.setFreemarkerSettings(p);
         configurer.setFreemarkerVariables(variables);
         XmlEscape xe = new XmlEscape();
-        variables.put("xmlescape",xe);
-
+        variables.put("xml_escape",xe);
+        AreaNameDirective and = new AreaNameDirective();
+        variables.put("areaName",and);
+        AreaNameMethod anm = new AreaNameMethod();
+        variables.put("areaNameMethod",anm);
         return configurer;
     }
 
