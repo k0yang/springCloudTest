@@ -1,5 +1,5 @@
 FROM java:8
-VOLUME /tmp
-ADD yh-test-web-1.0-SNAPSHOT.jar /yh-test-web-1.0-SNAPSHOT.jar
+VOLUME /opt/spring-cloud-web
+ADD yh-test-web-1.0-SNAPSHOT.jar /opt/spring-cloud-web.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/yh-test-web-1.0-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "/opt/spring-cloud-web.jar"]
