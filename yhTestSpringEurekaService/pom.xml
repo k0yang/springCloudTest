@@ -131,7 +131,7 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.4.9</version>
                 <configuration>
-                    <imageName>springCloud/${project.artifactId}</imageName>
+                    <imageName>spring_cloud/${project.artifactId}</imageName>
                     <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
                     <resources>
                         <resource>
